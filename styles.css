@@ -414,12 +414,18 @@ body {
 
 .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    background: none;
+    top: 14px;
+    right: 14px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
     border: none;
     color: var(--creme);
-    font-size: 2.4em;
+    font-size: 2.2em;
     cursor: pointer;
     line-height: 1;
     transition: transform 0.2s ease;
@@ -569,47 +575,47 @@ body {
 .music-toggle.playing .icon { animation: bounce 1.4s ease-in-out infinite; }
 .music-toggle.paused { opacity: 0.55; }
 
-.music-hint {
+/* Tela de abertura: capa que cobre a tela até o primeiro toque */
+.capa-toque {
     position: fixed;
-    bottom: 32px;
-    right: 88px;
-    background: var(--ameixa);
-    color: var(--creme);
-    font-size: 0.78em;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: linear-gradient(160deg, var(--algodao), var(--manteiga) 60%, var(--menta));
+    color: var(--ameixa);
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.capa-toque .icon {
+    width: 56px;
+    height: 56px;
+    color: var(--framboesa);
+    animation: bounce 1.8s ease-in-out infinite;
+}
+
+.capa-toque-titulo {
+    font-family: var(--font-display);
+    font-size: 2.4em;
+}
+
+.capa-toque-dica {
+    font-size: 0.95em;
     font-weight: 700;
-    padding: 8px 14px;
-    border-radius: 999px;
-    white-space: nowrap;
-    box-shadow: 0 6px 16px rgba(74, 46, 68, 0.3);
-    z-index: 1499;
-    animation: avisarMusica 1.6s ease-in-out infinite;
-    pointer-events: none;
+    opacity: 0.75;
 }
 
-.music-hint::after {
-    content: '';
-    position: absolute;
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-width: 6px 0 6px 6px;
-    border-style: solid;
-    border-color: transparent transparent transparent var(--ameixa);
-}
-
-.music-hint.escondido {
+.capa-toque.escondida {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease;
-}
-
-@keyframes avisarMusica {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-6px); }
-}
-
-@media (max-width: 480px) {
-    .music-hint { bottom: 26px; right: 74px; font-size: 0.7em; padding: 6px 11px; }
+    pointer-events: none;
 }
 
 /* Foco visível */

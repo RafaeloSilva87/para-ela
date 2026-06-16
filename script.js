@@ -147,11 +147,6 @@ document.addEventListener('keydown', function(e) {
 // Música de fundo
 const bgMusic = document.getElementById('bg-music');
 const musicToggle = document.getElementById('music-toggle');
-const musicHint = document.getElementById('music-hint');
-
-function esconderAvisoMusica() {
-    musicHint.classList.add('escondido');
-}
 
 function atualizarBotaoMusica() {
     if (bgMusic.paused) {
@@ -160,36 +155,23 @@ function atualizarBotaoMusica() {
     } else {
         musicToggle.classList.remove('paused');
         musicToggle.classList.add('playing');
-        esconderAvisoMusica();
     }
 }
-
-function tentarTocarMusica() {
-    bgMusic.play().then(atualizarBotaoMusica).catch(() => {
-        atualizarBotaoMusica();
-    });
-}
-
-tentarTocarMusica();
-
-// Some o aviso depois de um tempo, mesmo que ela não toque a música ainda
-setTimeout(esconderAvisoMusica, 7000);
-
-document.addEventListener('click', function iniciarNoPrimeiroClique() {
-    esconderAvisoMusica();
-    if (bgMusic.paused) {
-        bgMusic.play().then(atualizarBotaoMusica).catch(() => {});
-    }
-    document.removeEventListener('click', iniciarNoPrimeiroClique);
-}, { once: true });
 
 musicToggle.addEventListener('click', function(e) {
     e.stopPropagation();
-    esconderAvisoMusica();
     if (bgMusic.paused) {
         bgMusic.play().then(atualizarBotaoMusica).catch(() => {});
     } else {
         bgMusic.pause();
         atualizarBotaoMusica();
     }
+});
+
+// Tela de abertura: o toque pra entrar também é o gesto que libera a música
+const capaToque = document.getElementById('capa-toque');
+
+capaToque.addEventListener('click', function() {
+    capaToque.classList.add('escondida');
+    bgMusic.play().then(atualizarBotaoMusica).catch(() => atualizarBotaoMusica());
 });
