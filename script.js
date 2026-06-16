@@ -116,12 +116,21 @@ document.querySelectorAll('.foto').forEach(item => {
         lightboxImg.alt = img.alt;
         lightboxCaption.textContent = caption;
         lightbox.classList.add('active');
+        history.pushState({ lightboxAberto: true }, '');
     });
 });
 
 function fecharLightbox() {
     lightbox.classList.remove('active');
+    if (history.state && history.state.lightboxAberto) {
+        history.back();
+    }
 }
+
+// No celular, o botão "voltar" só fecha a foto em vez de sair do site
+window.addEventListener('popstate', function() {
+    lightbox.classList.remove('active');
+});
 
 lightbox.addEventListener('click', function(e) {
     if (e.target === lightbox) {

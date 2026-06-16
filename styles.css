@@ -644,4 +644,11 @@ button:focus-visible, a:focus-visible {
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
     }
+
+    /* Mantém os coraçõezinhos visíveis (parados, sem subir) em vez de invisíveis */
+    .ambiente .icon {
+        animation: none !important;
+        opacity: 0.3 !important;
+        bottom: 40% !important;
+    }
 }
