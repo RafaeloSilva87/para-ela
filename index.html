@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo - Uma Declaração Especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+        <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path d="M12 21S3.5 15.6 3.5 9.8C3.5 6.6 5.8 4.4 8.6 4.4c1.8 0 3.3 1 4.4 2.5 1.1-1.5 2.6-2.5 4.4-2.5 2.8 0 5.1 2.2 5.1 5.4 0 5.8-8.5 11.2-10.5 11.2z" fill="currentColor"/>
+        </symbol>
+    </svg>
+
+    <!-- Coraçõezinhos flutuando pela tela -->
+    <div class="ambiente" aria-hidden="true">
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+        <svg class="icon"><use href="#icon-heart"/></svg>
+    </div>
+
+    <!-- Varal de atalhos: fitas adesivas na borda, em vez de uma navbar de app -->
+    <nav class="fitas" aria-label="Ir para uma página do álbum">
+        <a class="fita" href="#inicio" style="--cor: var(--algodao)">capa</a>
+        <a class="fita" href="#mensagens" style="--cor: var(--manteiga)">bilhetes</a>
+        <a class="fita" href="#galeria" style="--cor: var(--menta)">fotos</a>
+        <a class="fita" href="#razoes" style="--cor: var(--algodao)">motivos</a>
+        <a class="fita" href="#surpresa" style="--cor: var(--manteiga)">raspe aqui</a>
+    </nav>
+
+    <main class="album">
+        <!-- Capa -->
+        <section id="inicio" class="pagina capa">
+            <div class="hero">
+                <p class="hero-eyebrow">Para você, com amor</p>
+                <div class="hero-content">
+                    <h1 class="hero-title">Te <em>amo</em></h1>
+                    <p class="hero-subtitle">Uma declaração especial para você</p>
+                </div>
+                <div class="hero-text">
+                    <p>Criei este site para te dizer de um jeito diferente o quanto você significa para mim. Você faz meus dias mais coloridos, meu coração mais feliz e minha vida mais completa.</p>
+                </div>
+                <div class="floating-elements">
+                    <span class="float-item"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+                    <span class="float-item"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+                    <span class="float-item"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+                </div>
+                <p class="rolar-dica">role pra ver o álbum ↓</p>
+            </div>
+        </section>
+
+        <!-- Bilhetes -->
+        <section id="mensagens" class="pagina">
+            <div class="titulo-pagina">
+                <h2>Bilhetes que deixei pra você</h2>
+            </div>
+            <div class="mural-bilhetes">
+                <div class="bilhete" style="--cor: var(--algodao); --tilt: -4deg">
+                    <p>Você é o sorriso que eu mais espero ver todos os dias. Quando você está perto, tudo fica melhor.</p>
+                    <span class="bilhete-rabisco">todos os dias</span>
+                </div>
+                <div class="bilhete" style="--cor: var(--menta); --tilt: 3deg">
+                    <p>Obrigado por ser exatamente quem você é. Suas pequenas atitudes me fazem se apaixonar cada vez mais.</p>
+                    <span class="bilhete-rabisco">todas as horas</span>
+                </div>
+                <div class="bilhete" style="--cor: var(--manteiga); --tilt: -2deg">
+                    <p>Com você descobri o que é realmente amar alguém. Você completou meu coração de forma que nunca imaginei.</p>
+                    <span class="bilhete-rabisco">para sempre</span>
+                </div>
+                <div class="bilhete" style="--cor: var(--algodao); --tilt: 4deg">
+                    <p>Cada momento ao seu lado é um tesouro. Sua presença é o presente mais precioso que a vida me deu.</p>
+                    <span class="bilhete-rabisco">eternidade</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mural de fotos -->
+        <section id="galeria" class="pagina">
+            <div class="titulo-pagina">
+                <h2>Nosso mural</h2>
+                <p>Cada foto é um lembrete do quanto nos amamos</p>
+            </div>
+            <div class="mural-fotos">
+                <div class="foto foto--grande">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto1.jpg" alt="Nosso jantar especial"></div>
+                    </div>
+                    <p>Nosso jantar especial</p>
+                </div>
+                <div class="foto">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto2.jpg" alt="Noite de risadas"></div>
+                    </div>
+                    <p>Noite de risadas</p>
+                </div>
+                <div class="foto">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto3.jpg" alt="Sempre juntinhos"></div>
+                    </div>
+                    <p>Sempre juntinhos</p>
+                </div>
+                <div class="foto foto--alta">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto4.jpg" alt="Aventuras incríveis"></div>
+                    </div>
+                    <p>Aventuras incríveis</p>
+                </div>
+                <div class="foto">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto5.jpg" alt="Um dia especial"></div>
+                    </div>
+                    <p>Um dia especial</p>
+                </div>
+                <div class="foto foto--larga">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto6.jpg" alt="Tardes no parque"></div>
+                    </div>
+                    <p>Tardes no parque</p>
+                </div>
+                <div class="foto">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto7.jpg" alt="Passeio no shopping"></div>
+                    </div>
+                    <p>Passeio no shopping</p>
+                </div>
+                <div class="foto">
+                    <div class="foto-moldura">
+                        <div class="foto-recorte"><img src="imagens/foto8.jpg" alt="Meu amor é seu"></div>
+                    </div>
+                    <p>Meu amor é seu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Varal de motivos -->
+        <section id="razoes" class="pagina">
+            <div class="titulo-pagina">
+                <h2>Um varal de motivos</h2>
+            </div>
+            <div class="varal">
+                <div class="varal-corda" aria-hidden="true"></div>
+                <div class="varal-coracao" style="--cor: var(--algodao)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Seu sorriso</h3>
+                    <p>Aquele sorriso genuíno que me faz esquecer de tudo.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--menta)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Sua gentileza</h3>
+                    <p>A forma como você cuida de mim e das pessoas que ama.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--manteiga)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Seu senso de humor</h3>
+                    <p>Me fazes rir todos os dias, mesmo nos piores momentos.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--algodao)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Sua inteligência</h3>
+                    <p>Amo conversar com você, aprender com você, crescer junto.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--menta)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Seu coração</h3>
+                    <p>A pureza e o amor que vêm do seu coração me inspiram.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--manteiga)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Você é você</h3>
+                    <p>Simplesmente por existir e ser exatamente quem você é.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--algodao)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Sua comida deliciosa</h3>
+                    <p>Você cozinha tão bem que cada refeição feita por você é um motivo de festa.</p>
+                </div>
+                <div class="varal-coracao" style="--cor: var(--menta)">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+                    <h3>Sua dedicação como mãe</h3>
+                    <p>O jeito carinhoso e dedicado com que você cuida das suas filhas me encanta todos os dias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Raspadinhas -->
+        <section id="surpresa" class="pagina">
+            <div class="titulo-pagina">
+                <h2>Raspe os corações</h2>
+                <p>Arraste o dedo ou o mouse sobre cada um para revelar a surpresa</p>
+            </div>
+            <div class="raspadinhas" id="raspadinhas"></div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="fecharLightbox()">&times;</button>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+
+    <!-- Música de fundo -->
+    <audio id="bg-music" src="musica/lisboa.mp3" loop></audio>
+    <button id="music-toggle" class="music-toggle" aria-label="Pausar ou tocar música"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
