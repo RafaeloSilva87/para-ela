@@ -138,6 +138,11 @@ document.addEventListener('keydown', function(e) {
 // Música de fundo
 const bgMusic = document.getElementById('bg-music');
 const musicToggle = document.getElementById('music-toggle');
+const musicHint = document.getElementById('music-hint');
+
+function esconderAvisoMusica() {
+    musicHint.classList.add('escondido');
+}
 
 function atualizarBotaoMusica() {
     if (bgMusic.paused) {
@@ -146,6 +151,7 @@ function atualizarBotaoMusica() {
     } else {
         musicToggle.classList.remove('paused');
         musicToggle.classList.add('playing');
+        esconderAvisoMusica();
     }
 }
 
@@ -157,7 +163,11 @@ function tentarTocarMusica() {
 
 tentarTocarMusica();
 
+// Some o aviso depois de um tempo, mesmo que ela não toque a música ainda
+setTimeout(esconderAvisoMusica, 7000);
+
 document.addEventListener('click', function iniciarNoPrimeiroClique() {
+    esconderAvisoMusica();
     if (bgMusic.paused) {
         bgMusic.play().then(atualizarBotaoMusica).catch(() => {});
     }
@@ -166,6 +176,7 @@ document.addEventListener('click', function iniciarNoPrimeiroClique() {
 
 musicToggle.addEventListener('click', function(e) {
     e.stopPropagation();
+    esconderAvisoMusica();
     if (bgMusic.paused) {
         bgMusic.play().then(atualizarBotaoMusica).catch(() => {});
     } else {
